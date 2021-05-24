@@ -9,16 +9,14 @@
 # conditions that are beyond the scope of this exercise.
 
 num = nil
+
 loop do
   puts "How many output lines do you want? Enter a number >= 3:"
   num = gets.chomp.to_i
 
-  if (num < 3) 
-    puts "That's not enough lines."
-    next
-  end
+  break unless num < 3
 
-  break
+  puts "That's not enough lines."
 end
 
 num.times { puts "Launch School is the best!" }
