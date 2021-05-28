@@ -1,0 +1,37 @@
+
+START
+
+GET loan amount, in dollars and cents
+  - validate as integer or float > 0
+GET loan duration, in years
+  - validate as integer or float > 0
+GET interest rate, as regularly-expressed percentage (e.g. 5.0%)
+  - validate as integer or float > 0
+
+SET monthly_interest_rate = interest_rate / 12
+SET loan_months = loan_duration * 12
+
+CALCUALTE monthly_payment = loan_amount * (monthly_interest_rate / (1 - ((1 + monthly_interest_rate)**(-loan_months))))
+
+PRINT monthly_payment
+
+END
+
+
+Examples based on calculator (https://www.calculator.net/loan-calculator.html):
+
+loan_amount = 100000
+loan_years = 25 years
+interest_apr = 5
+
+amount = $584.59
+
+Check with formula:
+monthly_interest_rate = 5.0  / 12 = 0.4167
+loan_months = 25 * 12 = 300
+
+CALCUALTE monthly_payment = loan_amount * (monthly_interest_rate / (1 - (1 + (monthly_interest_rate)**(-loan_months))))
+= 100000 * (0.004167 / (1 - (1.004167 ** -300)))
+
+
+
