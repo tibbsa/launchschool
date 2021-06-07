@@ -12,7 +12,7 @@ end
 
 counter = 10
 
-10.times do
+while counter > 0 do
   puts counter
   counter = decrease(counter)
 end
